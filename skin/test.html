@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sneha - Plastic Surgery & Aesthetics</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            pink: '#EC4899',
+                            gold: '#D4AF37',
+                            light: '#fffbf0',
+                            text: '#334155'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff7ed 50%, #fef2f2 100%);
+        }
+
+        .smoothie-gradient {
+            background: linear-gradient(90deg, #dbeafe 0%, #d1fae5 100%);
+        }
+
+        .section-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cursor-glow {
+            width: 40px;
+            height: 40px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 30px 15px rgb(245, 244, 245);
+            /* Softer, larger glow */
+            transition: opacity 0.3s ease;
+            filter: blur(8px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-brand-text antialiased scroll-smooth">
+
+    <!-- Header -->
+    <header class="bg-white text-gray-900 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <a href="#" class="block">
+                        <img src="image/logo.png" alt="Dr. Sneha" class="h-16 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-light tracking-wide">
+                    <a href="#" class="hover:text-brand-gold transition">HOME</a>
+                    <a href="#" class="hover:text-brand-gold transition">ABOUT</a>
+
+                    <!-- Surgical Dropdown -->
+                    <div class="group relative py-8">
+                        <button class="flex items-center gap-1 hover:text-brand-gold transition uppercase">
+                            Surgical <i class="fa-solid fa-caret-down text-xs"></i>
+                        </button>
+                        <!-- Mega Menu -->
+                        <div
+                            class="fixed top-24 left-0 w-full bg-white border-t-2 border-brand-gold shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-y-auto max-h-[calc(100vh-6rem)]">
+                            <div class="container mx-auto px-8 py-10 grid grid-cols-4 gap-6">
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-syringe text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Vaser
+                                        Liposuction</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-ruler-combined text-xl"></i>
+                                    </div>
+                                    <div class="leading-tight text-gray-600 group-hover/item:text-brand-gold">High
+                                        Definition<br>Liposuction</div>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-eraser text-xl"></i>
+                                    </div>
+                                    <div class="leading-tight text-gray-600 group-hover/item:text-brand-gold">
+                                        Correction<br>Liposuction</div>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-person-arrow-up-from-line text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Buttock Lift</span>
+                                </a>
+
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-scissors text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Tummy Tuck</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-person-pregnant text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Mommy Makeover</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-person-walking text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Thigh Lift</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-bolt text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">BBL</span>
+                                </a>
+
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-child-reaching text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Arm Lift</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-mars text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Male Chest Lift</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-ruler-vertical text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Breast Reduction</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition group/item">
+                                    <div
+                                        class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-brand-gold group-hover/item:bg-brand-gold group-hover/item:text-white transition">
+                                        <i class="fa-solid fa-arrow-up-right-dots text-xl"></i>
+                                    </div>
+                                    <span class="text-gray-600 group-hover/item:text-brand-gold">Breast Lift</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative py-8">
+                        <button class="flex items-center gap-1 hover:text-brand-gold transition uppercase">
+                            Non Surgical <i class="fa-solid fa-caret-down text-xs"></i>
+                        </button>
+                    </div>
+
+                    <div class="group relative py-8">
+                        <button class="flex items-center gap-1 hover:text-brand-gold transition uppercase">
+                            Gallery <i class="fa-solid fa-caret-down text-xs"></i>
+                        </button>
+                    </div>
+
+                    <a href="#" class="hover:text-brand-gold transition">BLOG</a>
+                    <a href="#" class="hover:text-brand-gold transition">CONTACT</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="bg-brand-gold text-white px-8 py-3 rounded-full text-sm font-bold tracking-wide hover:bg-yellow-600 transition">
+                        APPOINTMENT
+                    </a>
+                    <button class="lg:hidden text-gray-900 text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="item-start hero-gradient pt-5 relative overflow-hidden">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 items-center gap-12">
+            <div class="relative z-10">
+                <div
+                    class="inline-block bg-white/50 backdrop-blur-sm border border-pink-100 rounded-full px-4 py-1.5 mb-6">
+                    <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Board Certified
+                        Plastic Surgeon</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-light tracking-tight leading-tight text-gray-900 mb-6">
+                    Redefining <span class="text-brand-gold">Beauty,</span><br>
+                    Restoring Confidence.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    World-class surgical and non-surgical aesthetic treatments tailored to your unique goals.
+                    Experience the art of transformation with Dr. Sneha.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+
+                    <a href="#"
+                        class="bg-brand-gold text-white px-8 py-3 rounded-full text-sm font-bold tracking-wide hover:bg-yellow-600 transition">
+                        Book Consultation
+                    </a>
+                    <a href="#"
+                        class="group flex items-center justify-center gap-2 text-gray-700 font-medium px-6 py-3.5 hover:text-brand-gold transition">
+                        <span>View Gallery</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <!-- Abstract Bg Shape -->
+                <div
+                    class="absolute -top-10 -right-10 w-[500px] h-[500px] bg-gradient-to-br from-pink-200/40 to-amber-200/40 rounded-full blur-3xl -z-10">
+                </div>
+
+                <div class="relative z-10 mx-auto max-w-md md:max-w-full">
+                    <img src="image/home.png" alt="Dr. Sneha" class="rounded-3xl  w-full object-cover relative z-10 ">
+
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-10 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 max-w-[180px] hidden md:block">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <span class="text-xs font-bold text-gray-800">Board Certified</span>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-tight">Over 15+ years of surgical excellence and patient
+                            care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Video Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl w-full aspect-video">
+
+                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                        <source src="video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-light tracking-tight text-gray-900 mb-6">About Dr. Sneha</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dr. Sneha is a renowned Plastic, Reconstructive, and Aesthetic Surgeon known for her
+                        artistic approach
+                        to body contouring and facial rejuvenation. With a deep understanding of anatomy and aesthetics,
+                        she delivers
+                        natural-looking results that enhance your innate beauty.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        committed to patient safety and excellence, utilizing the latest techniques in cosmetic surgery
+                        to ensure minimal
+                        downtime and maximum satisfaction.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
+                        <div>
+                            <div class="text-2xl font-bold text-brand-gold mb-1">15+</div>
+                            <div class="text-xs text-gray-500 uppercase">Years Exp</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-gold mb-1">10k+</div>
+                            <div class="text-xs text-gray-500 uppercase">Patients</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-gold mb-1">100%</div>
+                            <div class="text-xs text-gray-500 uppercase">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smoothie Banner -->
+    <!-- Smoothie Banner -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div
+                class="bg-gradient-to-r from-pink-50 via-amber-50 to-pink-50 rounded-[2.5rem] pt-10 px-10 pb-0 md:pt-14 md:px-14 md:pb-0 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+
+                <div class="relative z-10 max-w-xl pb-10 md:pb-14">
+                    <p class="text-brand-gold font-bold tracking-wide text-xs uppercase mb-3">The Ultimate Guide To</p>
+
+                    <h3 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-4 leading-tight tracking-tight">
+                        E-Function Smoothie <br>Recipe Book 2.0
+                    </h3>
+
+                    <p class="text-brand-gray font-medium text-lg mb-8">
+                        Just $27 for a Limited Time! <span
+                            class="text-gray-400 line-through text-sm font-normal ml-2">$47</span>
+                    </p>
+
+                    <ul class="space-y-3 mb-10">
+                        <li class="flex items-center gap-3 text-gray-700 font-light text-base">
+                            <i
+                                class="fa-solid fa-check text-xs bg-gray-900 text-white rounded-full p-1 w-4 h-4 flex items-center justify-center"></i>
+                            Increase blood flow naturally
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-light text-base">
+                            <i
+                                class="fa-solid fa-check text-xs bg-gray-900 text-white rounded-full p-1 w-4 h-4 flex items-center justify-center"></i>
+                            Boost energy & vitality
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-light text-base">
+                            <i
+                                class="fa-solid fa-check text-xs bg-gray-900 text-white rounded-full p-1 w-4 h-4 flex items-center justify-center"></i>
+                            100% Natural ingredients
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#"
+                            class="bg-brand-gold text-white px-10 py-3.5 rounded-full font-medium shadow-xl shadow-amber-200 hover:shadow-2xl hover:-translate-y-0.5 transition-all text-sm tracking-wide">
+                            Buy Now
+                        </a>
+                        <a href="#"
+                            class="bg-white/50 backdrop-blur-sm text-gray-900 border border-gray-200 px-10 py-3.5 rounded-full font-medium hover:bg-white transition-all text-sm tracking-wide">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative z-10 w-full md:w-auto flex justify-center md:block self-end">
+                    <!-- Image container -->
+                    <div class="relative">
+                        <!-- Decorative circle behind -->
+                        <div class="absolute inset-0 bg-brand-gold/20 blur-3xl rounded-full scale-150 -z-10"></div>
+                        <img src="image/banner2.png" alt="E-Function Smoothie Recipe Book"
+                            class="w-[300px] md:w-[450px] object-cover drop-shadow-2xl md:translate-x-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Treatments -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-serif text-center text-gray-900 mb-16">Popular Treatments</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative h-[500px] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="image/service1.webp" alt="Breast Augmentation"
+                        class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-8 right-8 text-white">
+                        <div class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 opacity-90">Plastic Surgery
+                        </div>
+                        <h3 class="text-3xl font-serif mb-8 leading-tight">Breast Augmentation</h3>
+                        <button
+                            class="border border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg text-[10px] font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative h-[500px] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="image/service2.webp" alt="Botulinum Therapy"
+                        class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-8 right-8 text-white">
+                        <div class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 opacity-90">Injectables</div>
+                        <h3 class="text-3xl font-serif mb-8 leading-tight">Botulinum Therapy</h3>
+                        <button
+                            class="border border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg text-[10px] font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative h-[500px] rounded-3xl overflow-hidden cursor-pointer">
+                    <img src="image/service3.webp" alt="Dermal Fillers"
+                        class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-8 right-8 text-white">
+                        <div class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 opacity-90">Injectables</div>
+                        <h3 class="text-3xl font-serif mb-8 leading-tight">Dermal Fillers</h3>
+                        <button
+                            class="border border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg text-[10px] font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Categories Removed -->
+
+    <!-- Best Selling Services Removed -->
+
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-brand-gold mb-2">Patient Stories</h2>
+            <h3 class="text-3xl font-bold text-gray-900 mb-12">Real Results. Real People.</h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl card-shadow">
+                    <div class="flex gap-1 text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"I never thought natural methods could work this fast. Dr.
+                        Sneha's smoothie book is a game changer. I feel 20 years younger."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                            <img src="https://placehold.co/100x100/png?text=U1" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">Mark T.</div>
+                            <div class="text-xs text-gray-400">Verified Patient</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl card-shadow">
+                    <div class="flex gap-1 text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The clarity and energy I define now is insane. Following the
+                        protocol was easier than I expected. Highly recommend!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                            <img src="https://placehold.co/100x100/png?text=U2" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">David L.</div>
+                            <div class="text-xs text-gray-400">Verified Patient</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl card-shadow">
+                    <div class="flex gap-1 text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Finally a doctor who listens and offers real solutions instead
+                        of just pills. The results speak for themselves."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                            <img src="https://placehold.co/100x100/png?text=U3" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm">James R.</div>
+                            <div class="text-xs text-gray-400">Verified Patient</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="text-brand-gold font-semibold hover:underline">Read 2,500+ Patient Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Banner -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <div class="bg-brand-dark rounded-3xl overflow-hidden relative flex flex-col md:flex-row items-center bg-cover bg-center"
+                style="background-image: url('image/banner1.png');">
+                <div class="p-12 md:w-1/2 relative z-10 text-center md:text-left">
+                    <p class="text-brand-gold font-bold uppercase tracking-wider mb-2">Podcast</p>
+                    <h2 class="text-4xl md:text-6xl font-black text-white leading-none mb-6">
+                        THE ART OF<br>
+                        <span class="text-brand-gold">AESTHETICS</span>
+                    </h2>
+                    <a href="#"
+                        class="inline-block bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                        Listen Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl font-bold text-brand-gold mb-12">Our Latest Article</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="image/blog1.webp"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-3 leading-snug group-hover:text-brand-gold transition">Recovery
+                            Tips After Liposuction</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed">Key steps to ensure a smooth
+                            recovery and
+                            optimal results after your procedure.</p>
+                        <a href="#" class="text-brand-gold text-sm font-bold uppercase tracking-wide">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="image/blog2.webp"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-3 leading-snug group-hover:text-brand-gold transition">Surgical
+                            vs Non-Surgical Options</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed">Understanding the pros and
+                            cons of different
+                            aesthetic treatments.</p>
+                        <a href="#" class="text-brand-gold text-sm font-bold uppercase tracking-wide">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="image/blog3.webp"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-3 leading-snug group-hover:text-brand-gold transition">
+                            Maintaining Results Post-Procedure</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed">Lifestyle changes to keep you
+                            looking your
+                            best for years to come.</p>
+                        <a href="#" class="text-brand-gold text-sm font-bold uppercase tracking-wide">Read More</a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-block border border-gray-300 px-8 py-3 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition">View
+                    All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold text-brand-gold mb-4">Your Questions, Answered ✨</h2>
+                <p class="text-gray-600 mb-8">Can't find what you're looking for?</p>
+                <a href="#" class="text-brand-dark font-bold underline">Contact Us</a>
+            </div>
+            <div class="md:col-span-2 space-y-4">
+                <!-- FAQ Item 1 -->
+                <div
+                    class="faq-item border border-gray-200 rounded-xl p-6 hover:border-brand-gold transition cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-gray-900">Is this suitable for all ages?</h3>
+                        <i class="fa-solid fa-plus text-gray-400 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600 border-t border-gray-100 pt-4">
+                        Yes, our treatments are tailored to suit adults of all ages. However, a consultation is required
+                        to determine the best approach for your specific needs and skin type.
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div
+                    class="faq-item border border-gray-200 rounded-xl p-6 hover:border-brand-gold transition cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-gray-900">Do you ship internationally?</h3>
+                        <i class="fa-solid fa-plus text-gray-400 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600 border-t border-gray-100 pt-4">
+                        For our skincare products and supplements, yes, we offer international shipping. Surgical
+                        procedures, of course, are performed in-clinic only.
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div
+                    class="faq-item border border-gray-200 rounded-xl p-6 hover:border-brand-gold transition cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-gray-900">What is the refund policy?</h3>
+                        <i class="fa-solid fa-plus text-gray-400 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-gray-600 border-t border-gray-100 pt-4">
+                        We offer a 30-day money-back guarantee on all unopened products. Procedure deposits are
+                        refundable up to 48 hours before the scheduled appointment.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="bg-gray-50  pb-0 relative z-10">
+        <div class="container mx-auto px-4">
+            <div
+                class="bg-gradient-to-r from-[#fae8c8] via-[#fce4ec] to-[#e0c3fc] rounded-[2.5rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl transform translate-y-1/2 relative z-20 mx-4 md:mx-0">
+
+                <div
+                    class="flex-1 flex flex-col md:flex-row items-center md:items-start gap-8 text-center md:text-left">
+                    <div class="text-[#d946ef] text-6xl transform -rotate-12">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-serif">Sign up for our
+                            newsletter</h2>
+                        <p class="text-gray-700 font-medium">Be the first to know about our special offers, news, and
+                            updates.</p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-auto min-w-[350px]">
+                    <form class="flex items-center bg-white rounded-full p-1.5 shadow-md">
+                        <input type="email" placeholder="Email Address"
+                            class="flex-1 px-6 py-3 bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none w-full">
+                        <button type="button"
+                            class="bg-[#831843] text-white px-8 py-3 rounded-full font-bold hover:bg-[#701a3c] transition shadow-lg">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pb-16 pt-32 md:pt-40 relative z-0">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 border-b border-gray-800 pb-12 mb-12">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-6">DR. SNEHA</div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Empowering you to look and feel your best through natural, science-backed aesthetic solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold transition"><i
+                                class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold transition"><i
+                                class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold transition"><i
+                                class="fa-brands fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Quick Link</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition">About Dr. Sneha</a></li>
+                        <li><a href="#" class="hover:text-white transition">Our Clinic</a></li>
+                        <li><a href="#" class="hover:text-white transition">Patient Resources</a></li>
+                        <li><a href="#" class="hover:text-white transition">Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Support</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white transition">The Outlet policies</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><i class="fa-solid fa-phone mr-2"></i> (205) 555-0100</li>
+                        <li><i class="fa-regular fa-envelope mr-2"></i> info@yourwebsite.com</li>
+                        <li><i class="fa-solid fa-location-dot mr-2"></i> 4517 Washington Ave. Manchester, Kentucky
+                            39495</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                &copy; 2026 Dr. Sneha Aesthetics. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.createElement('div');
+            cursor.classList.add('cursor-glow');
+            document.body.appendChild(cursor);
+
+            const heroSection = document.getElementById('hero-section');
+            let mouseX = 0;
+            let mouseY = 0;
+            let cursorX = 0;
+            let cursorY = 0;
+            let isHoveringHero = false;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            if (heroSection) {
+                heroSection.addEventListener('mouseenter', () => {
+                    isHoveringHero = true;
+                    cursor.style.opacity = '1';
+                });
+
+                heroSection.addEventListener('mouseleave', () => {
+                    isHoveringHero = false;
+                    cursor.style.opacity = '0';
+                });
+            }
+
+            function animate() {
+                if (isHoveringHero) {
+                    const speed = 0.15;
+                    cursorX += (mouseX - cursorX) * speed;
+                    cursorY += (mouseY - cursorY) * speed;
+                    cursor.style.left = `${cursorX}px`;
+                    cursor.style.top = `${cursorY}px`;
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            // FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('.flex');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.fa-plus');
+
+                header.addEventListener('click', () => {
+                    // Toggle current item
+                    const isHidden = answer.classList.contains('hidden');
+
+                    // Close all others
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.fa-plus');
+                        if (otherItem !== item) {
+                            otherAnswer.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-45');
+                        }
+                    });
+
+                    if (isHidden) {
+                        answer.classList.remove('hidden');
+                        icon.classList.add('rotate-45');
+                    } else {
+                        answer.classList.add('hidden');
+                        icon.classList.remove('rotate-45');
+                    }
+                });
+            });
+
+            // Re-run animate to ensure loop continues
+            requestAnimationFrame(animate);
+        });
+    </script>
+</body>
+
+</html>
